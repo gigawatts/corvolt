@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+						  text-transform: none;
+				  }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Project Corvolt</h3>
+					<p class="stretch">
+						<img src="img/PXL_20231118_210321479.jpg">
+					</p>
+					<p>
+						<small>Ken Johnson</small>
+						<br>
+						<small>FVEAA Meeting - March 2024</small>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<small>Electrifying a 1963 Chevrolet Corvair 700 Coupe</small>
+					</p>
+					<p class="stretch">
+						<img src="img/IMG_20190727_090550.jpg">
+					</p>
+				</section>
+
+
+				<section>
+					<h3>Conversion Parts</h3>
+					<ul>
+						<li>NetGain HyPer 9 HV AC Motor</li>
+						<li>SME HyPer-Drive X144 Controller & Inverter</li>
+						<li>7 x Tesla Model S 5.3 kWh battery modules</li>
+						<li>SimpBMS from Vero Electric</li>
+						<li>Elcon/TC 1 kW DC-DC Converter</li>
+						<li>Elcon/TC 6.6 kW Onboard Charger</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Motor Install</h3>
+					<p class="stretch">
+						<img src="img/PXL_20230205_215330500.jpg" width="200">
+						<img src="img/PXL_20230320_210333675.jpg" width="200">
+						<img src="img/PXL_20230320_221304283.jpg" width="200">
+
+						<img src="img/PXL_20230320_230002872.jpg" width="380">
+						<img src="img/PXL_20230825_231543425.jpg" width="380">
+					</p>
+				</section>
+				
+				<section>
+					<h3>Battery Support</h3>
+					<img src="img/PXL_20231125_000030260.jpg" width="380">
+					<img src="img/PXL_20231125_015547893.MP.jpg" width="380">
+					<img src="img/PXL_20231125_015541254.jpg" width="380">
+					<img src="img/PXL_20231023_233612730.jpg" width="380">
+				</section>
+				
+				<section>
+					<section>
+						<h3>Battery Module Capacity Testing</h3>
+						<p class="stretch">
+							<!-- First BMS hookup to modules -->
+							<img src="img/PXL_20231007_203857297.jpg">
+						</p>
+					</section>
+
+					<!-- <section>
+						<small>iCharger S6</small>
+						<p class="stretch">
+							
+						</p>
+					</section> -->
+
+					<section>
+						<h4>Charging</h4>
+						<!-- <small>Charging</small> -->
+						<!-- <br> -->
+						<img src="img/PXL_20231120_021146617.jpg" width="300">
+						<img src="img/PXL_20240105_043740793.jpg" width="320">
+						<br>
+						<img src="img/PXL_20240106_203856983.MP.jpg" width="470">
+						<br>
+						<small class="fragment">232 Ah (Tesla Battery Module, Brand new)</small> <small class="fragment"> / 32 A</small> <small class="fragment" style="color: red;"	> = 7.25 hours!</small>
+					</section>
+
+					<section>
+						<h4>Discharging</h4>
+						<p class="stretch">
+							<small>via resistive load</small>
+							<img src="img/PXL_20240113_231345095.jpg">
+						</p>
+						<p>
+							<small class="fragment">Yes, that is a pile of old headlights... </small>
+							<small class="fragment" style="color: red;">
+								Hot, Smelly & Wasteful!
+							</small>
+						</p>
+						<!-- <section id="fragments"> -->
+							
+						<!-- </section> -->
+					</section>
+
+					<section>
+						<p class="stretch">
+							<small style="color: green;">Regen </small>
+							<small>discharge between modules</small>
+							<img src="img/PXL_20240216_023750514.jpg">
+						</p>
+					</section>
+					
+					<section>
+						<h4>Logging Equipment</h4>
+						<!-- <p class="stretch"> -->
+							<!-- <br> -->
+							<img src="img/PXL_20240216_023812326.jpg" style="float: right" width="400">
+							<ul style="display: block; font-size:28px">
+								<!-- <u>Equipment</u> -->
+								<li>Raspberry Pi 3B with...
+									<ul>
+										<li>MCP2515 SPI CAN Transceiver</li>
+										<li>Two Python scripts</li>
+										<li>MQTT Broker</li>
+										<li>InfluxDB Time Series Database</li>
+										<li>Grafana</li>
+									</ul>
+								</li>
+								<li>VeroBMS (aka SimpBMS) w/ Teensy 3.2</li>
+								<li>100V / 100mA Shunt Resistor</li>
+								<li>UNI-T UT161B Multimeter w/ USB Interface</li>
+								<li>Contactor + Fuse + Disconnect Switch</li>
+								<li>Some wire capable of carrying 40A</li>
+							</ul>
+							<pre style="display: block; font-size:18px">
+								<code class="hljs html wrap">Raspberry Pi
+  |
+  |---[CAN Bus]---[VeroBMS]---[All Tesla Module BMS Boards]
+  |
+  |---[USB]---[Multimeter]---[Shunt Resistor]
+  |
+  \---[Network]---[MQTT]---[InfluxDB]---[Grafana]
+								</code>
+							</pre>
+						<!-- </p> -->
+					</section>
+
+					<section>
+						<h4>Data Acquisition and Calculation</h4>
+						<!-- <p class="stretch">
+							<img src="img/">
+						</p> -->
+						<!-- Grafana & Spreadsheet-->
+						<img src="img/Screenshot-grafana.png" style="float: right" width="600">
+						<img src="img/Screenshot-readings.png" style="float: right" width="600">
+						<ul style="display: block; font-size:22px">
+							<li>Total Current and Voltage from each cell in a module under test is recorded to the time series database</li>
+							<li>Averaged over a minute</li>
+							<li>Exported to a Spreadsheet</li>
+							<li>Now we can calculate:
+							<ul>
+								<li>Watts consumed per minute</li>
+								<li>Each module's Amp-hour and Watt-hour rating and State of Health %</li>
+							</ul>
+						</ul>
+						<img src="img/Screenshot-pack-health.png" style="float: left" width="350">
+						
+					</section>
+				</section>
+				
+				<section>
+					<h3>Pressure Testing</h3>
+					<p class="stretch">
+						<img src="img/PXL_20240302_223719314.jpg">
+					</p>
+				</section>
+
+				<!-- Template -->
+				<!-- <section>
+					<p class="stretch">
+						<img src="img/">
+					</p>
+				</section> -->
+				
+				
+				<!-- <section data-markdown>
+					<textarea data-template>
+						![](img/PXL_20230320_210333675.jpg) | ![](img/PXL_20230320_230002872.jpg)
+						-------------------------------------------|-------------------------------------------
+						![](img/PXL_20230320_210333675.jpg) | ![](img/PXL_20230320_230002872.jpg)
+					</textarea>
+				</section> -->
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				transition: 'fade',
+				controlsTutorial: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
