@@ -36,13 +36,13 @@
 
 				<section>
 					<p>
-						<small>Electrifying a 1963 Chevrolet Corvair 700 Coupe</small>
+						Electrifying a 1963 Chevrolet Corvair 700 Coupe
 					</p>
 					<p class="stretch">
 						<img src="img/IMG_20190727_090550.jpg">
+						<small class="fragment" style="float: left; font-size:30px">This one is mine &#x2934;</small>
 					</p>
 				</section>
-
 
 				<section>
 					<h3>Conversion Parts</h3>
@@ -85,17 +85,8 @@
 						</p>
 					</section>
 
-					<!-- <section>
-						<small>iCharger S6</small>
-						<p class="stretch">
-							
-						</p>
-					</section> -->
-
 					<section>
 						<h4>Charging</h4>
-						<!-- <small>Charging</small> -->
-						<!-- <br> -->
 						<img src="img/PXL_20231120_021146617.jpg" width="300">
 						<img src="img/PXL_20240105_043740793.jpg" width="320">
 						<br>
@@ -116,14 +107,11 @@
 								Hot, Smelly & Wasteful!
 							</small>
 						</p>
-						<!-- <section id="fragments"> -->
-							
-						<!-- </section> -->
 					</section>
 
 					<section>
 						<p class="stretch">
-							<small style="color: green;">Regen </small>
+							<small style="color: green;">Regenerative </small>
 							<small>discharge between modules</small>
 							<img src="img/PXL_20240216_023750514.jpg">
 						</p>
@@ -131,11 +119,8 @@
 					
 					<section>
 						<h4>Logging Equipment</h4>
-						<!-- <p class="stretch"> -->
-							<!-- <br> -->
 							<img src="img/PXL_20240216_023812326.jpg" style="float: right" width="400">
 							<ul style="display: block; font-size:28px">
-								<!-- <u>Equipment</u> -->
 								<li>Raspberry Pi 3B with...
 									<ul>
 										<li>MCP2515 SPI CAN Transceiver</li>
@@ -161,15 +146,10 @@
   \---[Network]---[MQTT]---[InfluxDB]---[Grafana]
 								</code>
 							</pre>
-						<!-- </p> -->
 					</section>
 
 					<section>
 						<h4>Data Acquisition and Calculation</h4>
-						<!-- <p class="stretch">
-							<img src="img/">
-						</p> -->
-						<!-- Grafana & Spreadsheet-->
 						<img src="img/Screenshot-grafana.png" style="float: right" width="600">
 						<img src="img/Screenshot-readings.png" style="float: right" width="600">
 						<ul style="display: block; font-size:22px">
@@ -183,7 +163,6 @@
 							</ul>
 						</ul>
 						<img src="img/Screenshot-pack-health.png" style="float: left" width="350">
-						
 					</section>
 				</section>
 				
@@ -193,23 +172,21 @@
 						<img src="img/PXL_20240302_223719314.jpg">
 					</p>
 				</section>
-
-				<!-- Template -->
-				<!-- <section>
+				
+				<section>
+					<h3>Next Steps</h3>
 					<p class="stretch">
-						<img src="img/">
+						<p>
+						<ul>
+							<li>Finish welding up battery boxes</li>
+							<li>Get the battery boxes mounted into the car</li>
+							<li>Wire up all the things</li>
+							<li>Setup cooling loops for inverter and batteries</li>
+						</ul>
 					</p>
-				</section> -->
+					<br><br><br><br><br><br>
+				</section>
 				
-				
-				<!-- <section data-markdown>
-					<textarea data-template>
-						![](img/PXL_20230320_210333675.jpg) | ![](img/PXL_20230320_230002872.jpg)
-						-------------------------------------------|-------------------------------------------
-						![](img/PXL_20230320_210333675.jpg) | ![](img/PXL_20230320_230002872.jpg)
-					</textarea>
-				</section> -->
-
 			</div>
 		</div>
 
@@ -218,14 +195,10 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 				transition: 'fade',
 				controlsTutorial: false,
-				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
